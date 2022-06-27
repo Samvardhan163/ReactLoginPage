@@ -34,12 +34,12 @@ test("should able to type the email", () => {
   expect(emailElement.value).toBe("sam@gmail.com");
 });
 
-test("shpuld able to type the email", () => {
+test("should able to type the password", () => {
   render(<App></App>);
 
-  const emailElement = screen.getByRole("textbox", { name: /email/i });
+  const passwordElement = screen.getByLabelText("Password");
 
-  userEvent.type(emailElement, "sam@gmail.com");
+  userEvent.type(passwordElement, "cool");
 
-  expect(emailElement.value).toBe("sam@gmail.com");
+  expect(passwordElement.value).toBe("cool");
 });
