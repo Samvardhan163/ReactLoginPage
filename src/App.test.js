@@ -43,3 +43,13 @@ test("should able to type the password", () => {
 
   expect(passwordElement.value).toBe("cool");
 });
+
+test("should able to type the confirm password", () => {
+  render(<App></App>);
+
+  const confirmPasswordElement = screen.getByLabelText(/confirm password/i);
+
+  userEvent.type(confirmPasswordElement, "cool");
+
+  expect(confirmPasswordElement).toBe("cool");
+});
